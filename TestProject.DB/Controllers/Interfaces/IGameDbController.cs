@@ -7,7 +7,7 @@ using TestProject.DB.Models;
 
 namespace TestProject.DB.Controllers.Interfaces
 {
-	interface IGameDbController : IDbController<Game>
+	public interface IGameDbController : IDbController<Game>
 	{
 	}
 }

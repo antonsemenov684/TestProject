@@ -7,7 +7,7 @@ using TestProject.DB.Models;
 
 namespace TestProject.DB.Controllers.Interfaces
 {
-	interface IDeveloperDbController : IDbController<Developer>
+	public interface IDeveloperDbController : IDbController<Developer>
 	{
 	}
 }

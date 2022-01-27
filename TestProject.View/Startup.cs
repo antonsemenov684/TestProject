@@ -13,6 +13,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using TestProject.Domain.Controllers;
 using TestProject.Domain.Controllers.Interfaces;
+using IDbGameController = TestProject.DB.IGameController;
+using DbGameController = TestProject.DB.GameController;
+using TestProject.DB.Controllers;
+using TestProject.DB.Controllers.Interfaces;
 
 namespace TestProject.View
 {
@@ -28,6 +32,10 @@ namespace TestProject.View
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddSingleton<IGameDbController, GameDbController>();
+			services.AddSingleton<IDeveloperDbController, DeveloperDbController>();
+			services.AddSingleton<IGenreDbController, GenreDbController>();
+			services.AddSingleton<IDbGameController, DbGameController>();
 			services.AddSingleton<IGameController, GameController>();
 
 			services.AddControllers();

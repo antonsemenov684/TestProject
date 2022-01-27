@@ -14,9 +14,9 @@ namespace TestProject.Domain.Controllers
 	{
 		private readonly IDbGameController _gameController;
 
-		public GameController()
+		public GameController(IDbGameController gameController)
 		{
-			_gameController = new DbGameController();
+			_gameController = gameController;
 		}
 
 		public async Task<IEnumerable<Game>> Get(string genreName)

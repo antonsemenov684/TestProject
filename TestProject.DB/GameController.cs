@@ -15,11 +15,11 @@ namespace TestProject.DB
 		private IDeveloperDbController Developers { get; }
 		private IGenreDbController Genres { get; }
 
-		public GameController()
+		public GameController(IGameDbController games, IDeveloperDbController developers, IGenreDbController genres)
 		{
-			Games = new GameDbController();
-			Developers = new DeveloperDbController();
-			Genres = new GenreDbController();
+			Games = games;
+			Developers = developers;
+			Genres = genres;
 		}
 
 		public async Task<IEnumerable<Game>> GetAll()

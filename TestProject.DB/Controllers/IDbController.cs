@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace TestProject.DB.Controllers
 {
-	interface IDbController<T>
+	public interface IDbController<T>
 	{
 		public Task<IEnumerable<T>> GetAll();
 
